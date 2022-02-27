@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Header from './components/Header';
 import Movie from './pages/Movie';
+import BookTickets from './pages/BookTickets';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <div className="App w-fix font-mono">
         <Routes>
           <Route exact path='/' element={<Home />} />
+          <Route exact path='/movie/:movie_id/book_tickets' element={<BookTickets />} />
           <Route exact path='/movie/:movie_id' element={<Movie />} />
         </Routes>
       </div>

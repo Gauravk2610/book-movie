@@ -21,8 +21,8 @@ function Row({title, fetchUrl}) {
     return (
         <div className='space-y-4'>
             <div className="flex justify-between items-center">
-                <h1 className='text-2xl font-semibold'>{title}</h1>
-                <a className='text-[#df0e62] text-xl hover:underline ' href="#">Show all</a>
+                <h1 className='tet-xl sm:text-2xl font-semibold'>{title}</h1>
+                <a className='text-[#df0e62] text-base sm:text-xl hover:underline ' href="#">Show all</a>
             </div>
             <div className='Row__Card w-full flex space-x-6 overflow-x-scroll'>
                 {

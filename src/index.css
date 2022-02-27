@@ -4,7 +4,7 @@
 
 @layer components {
   .w-fix {
-    @apply mx-10 xl:mx-auto max-w-7xl 
+    @apply mx-6 sm:mx-10 xl:mx-auto max-w-7xl 
   }
   .h-links {
     @apply first:pl-0 px-2 hover:text-[#df0e62] transition-all duration-200 ease-in-out
