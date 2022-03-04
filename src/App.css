@@ -87,3 +87,23 @@ p.text span {
   color: #6feaf6;
 }
 
+.poster {
+  opacity: 0;
+}
+
+.poster:hover {
+  opacity: 0;
+  transition: opacity 200ms ease-in;
+  z-index: 0;
+}
+
+.trailer {
+  opacity: 1;
+  transition: opacity 200ms ease-in ;
+  z-index: 0;
+}
+
+.poster:hover ~ .trailer {
+  opacity: 1;
+  z-index: 100;
+}

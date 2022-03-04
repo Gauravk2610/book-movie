@@ -30,7 +30,10 @@ function Movie() {
             {/* banner */}
             <div className='flex flex-col space-y-8 lg:space-y-0 lg:flex-row px-6 py-4 justify-between items-center min-h-[480px] h-full w-full bg-cover bg-no-repeat' style={{ backgroundImage: `linear-gradient(90deg, rgb(34, 34, 34) 24.97%, rgb(34, 34, 34) 38.3%, rgba(34, 34, 34, 0.04) 97.47%, rgb(34, 34, 34) 100%), url(${base_url + movieData?.backdrop_path})` , backgroundColor: 'black'}}>
                 {/* image poster */}
-                <img className='rounded-xl max-h-[440px] object-contain' src={base_url + movieData?.poster_path} alt="" />
+                <div className='relative'>
+                    <img className=' z-10 rounded-xl poster max-h-[440px] relative object-contain' src={base_url + movieData?.poster_path} alt="" />
+                    <iframe className='trailer max-h-[440px] h-full rounded-xl absolute top-0' width=""  src="https://www.youtube.com/embed/kl8F-8tR8to" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
                 <div className='flex flex-col justify-between flex-1 min-h-[440px]  lg:ml-6'>
                     <div className='mr-auto space-y-4'>
                         {/* Title */}
