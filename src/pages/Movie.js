@@ -7,6 +7,15 @@ const base_url = "https://image.tmdb.org/t/p/original";
 
 const languages = ['Hindi', 'English', 'Tamil', 'Telugu']
 
+const starCast = {
+    'The Batman': ['Robert Pattinson', 'Zoë Kravitz', 'Jeffrey Wright', 'Colin Farrell', 'Paul Dano', '	John Turturro'],
+    'Scream': ['Melissa Barrera', 'Mason Gooding', 'Jenna Ortega', 'Jack Quaid', 'Marley Shelton', 'Neve Campbell'],
+    'Kimi': ['Zoe Kravitz', 'Steven Soderbergh', 'Petter Andrewz'],
+    'Spider-Man: No Way Home': ['Tom Holland', 'Zendaya', 'Benedict', 'Cumberbactch', 'Jacob batalon', 'Afred Molina'],
+    "The King's Man": ['Taron Egerton', 'Halle Berry', 'Mark Strong', 'Ralph Finnes']
+}
+
+
 function Movie() {
 
     // React Router Variables
@@ -31,8 +40,8 @@ function Movie() {
             <div className='flex flex-col space-y-8 lg:space-y-0 lg:flex-row px-6 py-4 justify-between items-center min-h-[480px] h-full w-full bg-cover bg-no-repeat' style={{ backgroundImage: `linear-gradient(90deg, rgb(34, 34, 34) 24.97%, rgb(34, 34, 34) 38.3%, rgba(34, 34, 34, 0.04) 97.47%, rgb(34, 34, 34) 100%), url(${base_url + movieData?.backdrop_path})` , backgroundColor: 'black'}}>
                 {/* image poster */}
                 <div className='relative'>
-                    <img className=' z-10 rounded-xl poster max-h-[440px] relative object-contain' src={base_url + movieData?.poster_path} alt="" />
-                    <iframe className='trailer max-h-[440px] h-full rounded-xl absolute top-0' width=""  src="https://www.youtube.com/embed/kl8F-8tR8to" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <img className=' z-10 rounded-xl poster sm:w-[380px] h-full relative object-contain' src={base_url + movieData?.poster_path} alt="" />
+                    <iframe className='trailer max-w-[360px] w-full h-full rounded-xl absolute top-0' width=""  src="https://www.youtube.com/embed/kl8F-8tR8to" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <div className='flex flex-col justify-between flex-1 min-h-[440px]  lg:ml-6'>
                     <div className='mr-auto space-y-4'>
@@ -65,6 +74,15 @@ function Movie() {
                         <div className='flex flex-wrap items-center md:space-x-4'>
                             {
                                 languages.map((type, index) => (
+                                    <div key={index} className='bg-white text-base sm:text-lg px-2 rounded-lg hover:underline cursor-pointer text-black mr-4 mb-4 '>{type}</div>
+                                ))
+                            }
+                        </div>
+                        {/* Star Cast */}
+                        <div className='flex flex-wrap items-center '>
+                            <span className='text-xl px-2 mb-4'>Cast: </span>
+                            {
+                                starCast[movieData?.title]?.map((type, index) => (
                                     <div key={index} className='bg-white text-base sm:text-lg px-2 rounded-lg hover:underline cursor-pointer text-black mr-4 mb-4 '>{type}</div>
                                 ))
                             }
